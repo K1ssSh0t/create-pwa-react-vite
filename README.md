@@ -64,11 +64,11 @@ VitePWA({
       manifest: {
         name: "vite-project",
         short_name: "vite-project",
-        start_url: "/{repo-name}/",
+        start_url: "/{repo-name}/", ///pending to try it with routes
         display: "standalone",
         background_color: "#ffffff",
         lang: "en",
-        scope: "/{repo-name}/",
+        scope: "/{repo-name}/",     ///pending to try it with routes
         icons: [    //all of this icons should be on public folder
                     // All necesari to make the Web App installable
           {
