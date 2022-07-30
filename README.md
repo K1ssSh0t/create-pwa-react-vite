@@ -98,3 +98,30 @@ VitePWA({
 ```
 3. Now we are ready to buildt and deploy it
 
+> Pending to check 
+
+```shell
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      manifest,
+      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      // switch to "true" to enable sw on development
+      devOptions: {
+        enabled: false,
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html}', '**/*.{svg,png,jpg,gif}'],
+      },
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+});
+
+```
+
