@@ -64,7 +64,7 @@ VitePWA({
       manifest: {
         name: "vite-project",
         short_name: "vite-project",
-        start_url: "/{repo-name}/", ///pending to try it with routes
+        start_url: "/{repo-name}/", ///pending to try it with routes  //      './' ??? or './
         display: "standalone",
         background_color: "#ffffff",
         lang: "en",
