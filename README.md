@@ -98,6 +98,61 @@ VitePWA({
 ```
 3. Now we are ready to buildt and deploy it
 
+
+## _Routes_
+
+1. Add the folowing to `vite.config.ts`
+
+```shell
+resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+```
+
+
+2. Now for the routes we use react-router and for the import of components we use `React.lazy()` example:
+
+```shell
+const About = React.lazy(() => import("./pages/About"));
+
+<Route
+            path="about"
+            element={
+              <React.Suspense fallback={<>...</>}>
+                <About />
+              </React.Suspense>
+            }
+/>
+```
+
+< We well need a function when we go to not existing route in our app
+
+```shell
+<Route path="*" element={<NoMatch />} />
+
+
+function NoMatch() {
+  return (
+    <div>
+      <h2>Nothing to see here!</h2>
+      <p>
+        <Link to="">Go to the home page</Link>
+      </p>
+    </div>
+  );
+}
+```
+
+3. We need to modify our ``main.tsx` with `HashRouter`
+
+```shell
+ <HashRouter>
+    <App />
+  </HashRouter>
+
+```
 > Pending to check 
 
 ```shell
